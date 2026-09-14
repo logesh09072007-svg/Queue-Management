@@ -1,0 +1,61 @@
+{
+  "model_version": "1.0.0",
+  "trained_at": "2026-09-14T12:15:18.733162",
+  "random_seed": 42,
+  "dataset_name": "synthetic_canteen_data.csv",
+  "dataset_records": 1800,
+  "data_disclaimer": "Trained on Synthetic Demo Data for development and demonstration.",
+  "crowd_model": {
+    "algorithm": "RandomForestRegressor",
+    "n_estimators": 100,
+    "features": [
+      "hour",
+      "minute",
+      "day_of_week",
+      "sin_hour",
+      "cos_hour",
+      "sin_dow",
+      "cos_dow",
+      "is_holiday",
+      "is_exam_period",
+      "is_breakfast_peak",
+      "is_morning_break",
+      "is_lunch_peak",
+      "is_evening_break"
+    ],
+    "metrics": {
+      "mae": 3.544,
+      "rmse": 4.418,
+      "r2_score": 0.9756
+    }
+  },
+  "wait_model": {
+    "algorithm": "RandomForestRegressor",
+    "n_estimators": 100,
+    "features": [
+      "queue_length",
+      "active_counters",
+      "orders_pending",
+      "average_service_time",
+      "queue_per_counter",
+      "workload_index",
+      "hour",
+      "minute",
+      "day_of_week",
+      "sin_hour",
+      "cos_hour",
+      "is_lunch_peak"
+    ],
+    "metrics": {
+      "mae": 0.833,
+      "rmse": 1.033,
+      "r2_score": 0.9943
+    }
+  },
+  "capacity_thresholds": {
+    "canteen_capacity_default": 120,
+    "low_pct": 30,
+    "medium_pct": 60,
+    "high_pct": 80
+  }
+}
